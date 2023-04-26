@@ -43,6 +43,8 @@ const login = async (req, res) => {
   }
   )
 
+  res.status(200).json({success: true, accessToken, user: userFound})
+
 };
 
 /**
@@ -50,3 +52,9 @@ const login = async (req, res) => {
  * @route POST /auth/logout
  * @access public
  */
+
+const logout = (req,res) => {
+    res.json({success: true, message: 'Logout Succes'})
+}
+
+module.exports = {login , logout }

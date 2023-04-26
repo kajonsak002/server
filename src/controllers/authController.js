@@ -31,19 +31,18 @@ const login = async (req, res) => {
       .json({ success: false, message: "All Fields are requirde" });
 
 
-  const accessToken = jwt.sign({
-    UserInfo : {
+  const accessToken = jwt.sign({    UserInfo : {
         username: userFound.username,
         name: userFound.name ,
-        role: userFound.role
+        role: userFound.role,
     },
   },
-  process.env.ASSESS_TOKEN_SECRET {
-    expiresIn: '1d'
-  }
+  process.env.ACCESS_TOKEN_SECRET ,
+    {expiresIn: '1d'}
+  
   )
 
-  res.status(200).json({success: true, accessToken, user: userFound})
+  res.status(200).json({success: true, acessToken, user: userFound})
 
 };
 

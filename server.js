@@ -19,6 +19,8 @@ app.use("/", express.static(path.join(__dirname, "public")));
 
 app.use("/api/auth", require("./src/routes/authRoutes"));
 app.use("/api/users", require("./src/routes/userRoutes"));
+app.use("/api/products", require("./src/routes/productRoutes"));
+app.use("/api/customers", require("./src/routes/customerRoutes"));
 
 // Mogoose setup //
 const port = process.env.PORT || 5001;
